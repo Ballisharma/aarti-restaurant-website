@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
                 <a href="#" className="hover:text-gray-400">Terms</a>
                 <a href="#" className="hover:text-gray-400">Accessibility</a>
             </div>
-            <p>Designed by Replica AI</p>
+            <p>Concept designed by Letsflydigital</p>
         </div>
       </div>
     </footer>
