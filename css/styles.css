@@ -452,10 +452,12 @@ a:focus-visible {
 
   .hero-video--mobile {
     display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
   }
 }
 
@@ -514,7 +516,7 @@ a:focus-visible {
 .hero-logo-img--color {
   filter: none;
   opacity: 1;
-  height: clamp(120px, 22vw, 240px);
+  height: clamp(160px, 28vw, 300px);
 }
 
 .hero-location {
@@ -2158,6 +2160,14 @@ details[open] .faq-icon::after {
 
   .hero-title {
     letter-spacing: 0.08em;
+  }
+
+  .hero-logo-img--color {
+    height: clamp(180px, 45vw, 260px);
+  }
+
+  .hero-logo-mark {
+    margin-bottom: var(--space-md);
   }
 
   .menu-showcase {
