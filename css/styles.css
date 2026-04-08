@@ -816,40 +816,103 @@ a:focus-visible {
   flex-shrink: 0;
 }
 
-/* Menu sections */
+/* Menu sections — spice route journey */
 .menu-section {
-  padding: var(--space-md) 0;
+  padding: var(--space-lg) 0;
+  position: relative;
 }
 
 .menu-section-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
-  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 300;
   color: var(--color-cream);
   text-align: center;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   margin-bottom: var(--space-lg);
   position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+.menu-section-title::before,
+.menu-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  opacity: 0.4;
+}
+
+.menu-section-title::before {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
 
 .menu-section-title::after {
-  content: "";
-  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -4px;
   width: 40px;
-  height: 1px;
   background: var(--color-burgundy-light);
-  margin: var(--space-xs) auto 0;
   opacity: 0.6;
 }
 
+/* Spice route — vertical thread connecting dishes */
 .menu-items {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: 0;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.menu-items::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: linear-gradient(to bottom,
+    transparent,
+    var(--color-burgundy-light) 10%,
+    var(--color-burgundy-light) 90%,
+    transparent
+  );
+  opacity: 0.25;
 }
 
 .menu-item {
-  padding: 0 var(--space-sm);
+  padding: 0.75rem 0 0.75rem var(--space-sm);
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+/* Route dot on the timeline */
+.menu-item::before {
+  content: "";
+  position: absolute;
+  left: -2.15rem;
+  top: 1.1rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-burgundy);
+  border: 1px solid var(--color-burgundy-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover::before {
+  transform: scale(1.5);
+  box-shadow: 0 0 8px rgba(90, 26, 42, 0.5);
+}
+
+.menu-item:hover {
+  background: rgba(90, 26, 42, 0.06);
+  border-radius: 4px;
 }
 
 .menu-item-header {
@@ -862,24 +925,27 @@ a:focus-visible {
 
 .menu-item-name {
   font-family: var(--font-heading);
-  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
   font-weight: 500;
   color: var(--color-cream);
   letter-spacing: 0.02em;
 }
 
+/* Influence tag — styled like a passport stamp */
 .menu-item-influence {
   font-family: var(--font-body);
-  font-size: 0.625rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-burgundy-light);
-  border: 1px solid rgba(90, 26, 42, 0.3);
-  padding: 0.2em 0.6em;
-  border-radius: 2px;
+  color: var(--color-gold);
+  background: rgba(194, 120, 50, 0.08);
+  border: 1px solid rgba(194, 120, 50, 0.25);
+  padding: 0.25em 0.7em;
+  border-radius: 1px;
   white-space: nowrap;
   flex-shrink: 0;
+  position: relative;
 }
 
 .menu-item-desc {
@@ -889,27 +955,53 @@ a:focus-visible {
   font-style: italic;
   line-height: 1.7;
   color: var(--color-light);
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 .menu-item-story {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 300;
   line-height: 1.6;
-  color: var(--color-forest-light);
-  margin-top: 0.4rem;
-  padding-left: var(--space-sm);
-  border-left: 1px solid rgba(42, 68, 40, 0.3);
+  color: var(--color-gold);
+  opacity: 0.6;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(194, 120, 50, 0.04);
+  border-left: 2px solid rgba(194, 120, 50, 0.2);
+  border-radius: 0 2px 2px 0;
+  font-style: italic;
 }
 
-/* Divider between sections */
+/* Divider between sections — spice route waypoint */
 .menu-section-divider {
-  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: var(--space-md) 0;
+}
+
+.menu-section-divider::before,
+.menu-section-divider::after {
+  content: "";
+  width: 40px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
-  opacity: 0.25;
-  margin: var(--space-sm) auto;
+  background: linear-gradient(90deg, transparent, var(--color-gold));
+  opacity: 0.2;
+}
+
+.menu-section-divider::after {
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+.menu-waypoint {
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+  transform: rotate(45deg);
+  opacity: 0.35;
+  flex-shrink: 0;
 }
 
 /* Footer area */
@@ -2262,8 +2354,22 @@ details[open] .faq-icon::after {
     display: none;
   }
 
+  .menu-items {
+    padding-left: 2rem;
+  }
+
+  .menu-items::before {
+    left: 0.35rem;
+  }
+
   .menu-item {
-    padding: 0;
+    padding: 0.6rem 0 0.6rem 0.5rem;
+  }
+
+  .menu-item::before {
+    left: -1.85rem;
+    width: 5px;
+    height: 5px;
   }
 
   .menu-item-header {
@@ -2277,6 +2383,7 @@ details[open] .faq-icon::after {
 
   .menu-section-title {
     margin-bottom: var(--space-md);
+    font-size: 1.25rem;
   }
 
   .gallery-grid {
