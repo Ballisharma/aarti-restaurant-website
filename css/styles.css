@@ -1546,7 +1546,7 @@ details[open] .faq-icon::after {
   left: 0;
   right: 0;
   z-index: 90;
-  padding: var(--space-sm) var(--space-sm) calc(var(--space-sm) + env(safe-area-inset-bottom, 0px));
+  padding: 0.5rem 0.5rem env(safe-area-inset-bottom, 0px);
   background: rgba(14, 12, 10, 0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -2404,7 +2404,7 @@ details[open] .faq-icon::after {
 
   /* Add bottom padding to body to account for sticky reserve bar */
   body {
-    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: 60px;
   }
 
   .band-img {
