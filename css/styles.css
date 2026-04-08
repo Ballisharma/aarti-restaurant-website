@@ -210,17 +210,21 @@ a:focus-visible {
 }
 
 .btn-hero {
-  background-color: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, var(--color-burgundy) 0%, #6B2236 100%);
   color: var(--color-cream);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8px);
+  border: 1px solid rgba(194, 120, 50, 0.4);
+  padding: 1.1rem 3rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  box-shadow: 0 4px 24px rgba(90, 26, 42, 0.4), 0 0 0 1px rgba(194, 120, 50, 0.1);
 }
 
 .btn-hero:hover {
-  background-color: var(--color-gold);
+  background: linear-gradient(135deg, var(--color-burgundy-light) 0%, var(--color-burgundy) 100%);
   border-color: var(--color-gold);
-  color: var(--color-black);
-  opacity: 1;
+  color: var(--color-cream);
+  box-shadow: 0 6px 32px rgba(90, 26, 42, 0.5), 0 0 0 1px rgba(194, 120, 50, 0.3);
+  transform: translateY(-1px);
 }
 
 .btn-outline {
@@ -2163,11 +2167,16 @@ details[open] .faq-icon::after {
   }
 
   .hero-logo-img--color {
-    height: clamp(180px, 45vw, 260px);
+    height: clamp(200px, 55vw, 300px);
   }
 
   .hero-logo-mark {
     margin-bottom: var(--space-md);
+  }
+
+  .btn-hero {
+    padding: 1rem 2.5rem;
+    font-size: 0.6875rem;
   }
 
   .menu-showcase {
