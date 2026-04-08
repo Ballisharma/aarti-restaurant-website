@@ -322,22 +322,17 @@
 
     if (!hero || !reserveBar) return;
 
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            reserveBar.classList.remove("visible");
-          } else {
-            reserveBar.classList.add("visible");
-          }
-        });
-      },
-      {
-        threshold: 0.15,
+    // Show bar as soon as user scrolls even slightly
+    var shown = false;
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 10 && !shown) {
+        shown = true;
+        reserveBar.classList.add("visible");
+      } else if (window.scrollY <= 10 && shown) {
+        shown = false;
+        reserveBar.classList.remove("visible");
       }
-    );
-
-    observer.observe(hero);
+    }, { passive: true });
   }
 
   // ── Init All ──
