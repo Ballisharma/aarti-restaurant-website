@@ -72,6 +72,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
   -webkit-text-size-adjust: 100%;
+  background-color: var(--color-black);
 }
 
 body {
@@ -80,7 +81,7 @@ body {
   font-weight: 300;
   line-height: 1.8;
   color: var(--color-mid);
-  background-color: var(--color-cream);
+  background-color: var(--color-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -706,6 +707,10 @@ a:focus-visible {
 .image-band-track {
   display: flex;
   gap: 4px;
+}
+
+.image-band-track picture {
+  flex-shrink: 0;
 }
 
 .band-img {
@@ -1541,10 +1546,11 @@ details[open] .faq-icon::after {
   left: 0;
   right: 0;
   z-index: 90;
-  padding: var(--space-sm);
-  background: rgba(14, 12, 10, 0.95);
+  padding: var(--space-sm) var(--space-sm) calc(var(--space-sm) + env(safe-area-inset-bottom, 0px));
+  background: rgba(14, 12, 10, 0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(90, 26, 42, 0.3);
   transform: translateY(100%);
   transition: transform 0.5s var(--ease-out-expo);
 }

@@ -342,17 +342,28 @@
     if (!video) return;
     if (window.innerWidth > 640) return;
 
-    // Force play — some mobile browsers need a programmatic call
-    var playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(function () {
-        // Autoplay blocked — try again on first user interaction
-        document.addEventListener("touchstart", function onTouch() {
-          video.play();
-          document.removeEventListener("touchstart", onTouch);
-        }, { once: true });
-      });
+    // iOS requires muted to be set programmatically for autoplay
+    video.muted = true;
+    video.setAttribute("muted", "");
+    video.playsInline = true;
+
+    function tryPlay() {
+      var playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function () {
+          // Autoplay blocked — try again on first user interaction
+          document.addEventListener("touchstart", function onTouch() {
+            video.muted = true;
+            video.play();
+            document.removeEventListener("touchstart", onTouch);
+          }, { once: true });
+        });
+      }
     }
+
+    // Try immediately, and also when video has enough data
+    tryPlay();
+    video.addEventListener("loadeddata", tryPlay, { once: true });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
