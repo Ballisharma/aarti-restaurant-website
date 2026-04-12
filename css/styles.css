@@ -725,14 +725,8 @@ a:focus-visible {
    MENU — Editorial centered layout
    ============================================ */
 .section-menu {
-  background: linear-gradient(
-    180deg,
-    var(--color-charcoal) 0%,
-    #F5EDE0 4%,
-    #F5EDE0 96%,
-    var(--color-charcoal) 100%
-  );
-  color: var(--color-cream);
+  background: #F5EDE0;
+  color: #2A1A0E;
   padding: var(--space-2xl) 0;
 }
 
