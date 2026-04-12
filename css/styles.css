@@ -728,17 +728,14 @@ a:focus-visible {
   background: linear-gradient(
     180deg,
     var(--color-charcoal) 0%,
-    #2A231A 8%,
-    #3D3024 16%,
-    #6B5840 24%,
-    #A48B6A 32%,
-    #D4C4A8 40%,
-    #F5EDE0 48%,
-    #F5EDE0 56%,
-    #D4C4A8 64%,
-    #A48B6A 72%,
-    #6B5840 80%,
-    #3D3024 88%,
+    #3D3024 5%,
+    #6B5840 9%,
+    #D4C4A8 13%,
+    #F5EDE0 17%,
+    #F5EDE0 85%,
+    #D4C4A8 89%,
+    #6B5840 93%,
+    #3D3024 96%,
     var(--color-charcoal) 100%
   );
   color: var(--color-cream);
@@ -746,11 +743,11 @@ a:focus-visible {
 }
 
 .section-menu .section-label {
-  color: var(--color-forest-light);
+  color: #8B6914;
 }
 
 .section-menu .section-title {
-  color: var(--color-cream);
+  color: #2A1A0E;
 }
 
 .menu-header {
@@ -760,7 +757,7 @@ a:focus-visible {
 }
 
 .menu-intro {
-  color: var(--color-light);
+  color: #3D2B1F;
   opacity: 0.7;
   font-size: 0.9375rem;
   line-height: 1.8;
