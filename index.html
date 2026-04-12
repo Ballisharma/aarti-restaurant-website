@@ -78,15 +78,20 @@
   <!-- Hero Section — Cinematic full-bleed -->
   <header id="hero" class="hero">
     <div class="hero-media">
-      <picture>
-        <source srcset="images/gallery/slider.webp" type="image/webp" />
-        <img
-          src="images/gallery/slider.jpeg"
-          alt="Dravida restaurant bar with warm ambient lighting, brass shelves, and exposed brick"
-          class="hero-image hero-image--desktop"
-          fetchpriority="high"
-        />
-      </picture>
+      <video
+        class="hero-video hero-video--desktop"
+        autoplay
+        muted="true"
+        loop
+        playsinline
+        webkit-playsinline="true"
+        preload="auto"
+        poster="images/gallery/slider.webp"
+        aria-hidden="true"
+      >
+        <source src="images/video/hero-desktop.webm" type="video/webm">
+        <source src="images/video/hero-desktop.mp4" type="video/mp4">
+      </video>
       <video
         class="hero-video hero-video--mobile"
         autoplay
