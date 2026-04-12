@@ -726,16 +726,23 @@ a:focus-visible {
    ============================================ */
 .section-menu {
   background: linear-gradient(
-    175deg,
+    180deg,
     var(--color-charcoal) 0%,
-    #1E2420 30%,
-    #1A201C 50%,
-    #1E2420 70%,
+    #2A231A 8%,
+    #3D3024 16%,
+    #6B5840 24%,
+    #A48B6A 32%,
+    #D4C4A8 40%,
+    #F5EDE0 48%,
+    #F5EDE0 56%,
+    #D4C4A8 64%,
+    #A48B6A 72%,
+    #6B5840 80%,
+    #3D3024 88%,
     var(--color-charcoal) 100%
   );
   color: var(--color-cream);
   padding: var(--space-2xl) 0;
-  overflow: visible;
 }
 
 .section-menu .section-label {
@@ -759,47 +766,19 @@ a:focus-visible {
   line-height: 1.8;
 }
 
-/* Menu card — cream parchment with fade transitions */
+/* Menu card — no visible card, content sits on the section gradient */
 .menu-card {
   max-width: 960px;
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-lg);
-  background: #F5EDE0;
+  padding: var(--space-lg) var(--space-lg);
+  background: none;
   border: none;
   position: relative;
-  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* Fade-in gradient from dark site into cream card */
-.menu-card::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    #F5EDE0 100%
-  );
-  pointer-events: none;
-}
-
-/* Fade-out gradient from cream card back to dark site */
+.menu-card::before,
 .menu-card::after {
-  content: "";
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(
-    to top,
-    transparent 0%,
-    #F5EDE0 100%
-  );
-  pointer-events: none;
+  display: none;
 }
 
 /* Two-column grid matching the PDF layout */
@@ -821,8 +800,8 @@ a:focus-visible {
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(139, 26, 43, 0.1) 15%,
-    rgba(139, 26, 43, 0.1) 85%,
+    rgba(90, 26, 42, 0.12) 15%,
+    rgba(90, 26, 42, 0.12) 85%,
     transparent
   );
 }
@@ -2304,18 +2283,7 @@ details[open] .faq-icon::after {
   }
 
   .menu-card {
-    padding: var(--space-lg) var(--space-sm);
-    margin: 0 calc(-1 * var(--space-sm));
-  }
-
-  .menu-card::before {
-    top: -40px;
-    height: 40px;
-  }
-
-  .menu-card::after {
-    bottom: -40px;
-    height: 40px;
+    padding: var(--space-md) var(--space-xs);
   }
 
   .menu-grid {
